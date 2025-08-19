@@ -220,6 +220,12 @@
     <Compile Include="Scan\set_partcode.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Scan\warning.designer.vb">
+      <DependentUpon>warning.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Scan\warning.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="User\change_password.designer.vb">
       <DependentUpon>change_password.vb</DependentUpon>
     </Compile>
@@ -288,6 +294,9 @@
     <EmbeddedResource Include="Scan\set_partcode.resx">
       <DependentUpon>set_partcode.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Scan\warning.resx">
+      <DependentUpon>warning.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User\change_password.resx">
       <DependentUpon>change_password.vb</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +338,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="model.ico" />
+    <None Include="Resources\pause %281%29.png" />
+    <None Include="Resources\play %281%29.png" />
     <None Include="Resources\forward %281%29.png" />
     <None Include="Resources\forward.png" />
     <None Include="Resources\play.png" />

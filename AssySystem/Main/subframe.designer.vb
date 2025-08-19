@@ -29,7 +29,6 @@ Partial Class subframe
         Me.DashboardToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ScanBarcodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.profile_menu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btn_administrator = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetLineToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -77,14 +76,9 @@ Partial Class subframe
         '
         'profile_menu
         '
-        Me.profile_menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btn_administrator})
+        Me.profile_menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_administrator})
         Me.profile_menu.Name = "ContextMenuStrip1"
-        Me.profile_menu.Size = New System.Drawing.Size(182, 40)
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(185, 6)
+        Me.profile_menu.Size = New System.Drawing.Size(189, 56)
         '
         'btn_administrator
         '
@@ -95,7 +89,7 @@ Partial Class subframe
         Me.btn_administrator.Image = CType(resources.GetObject("btn_administrator.Image"), System.Drawing.Image)
         Me.btn_administrator.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.btn_administrator.Name = "btn_administrator"
-        Me.btn_administrator.Size = New System.Drawing.Size(181, 30)
+        Me.btn_administrator.Size = New System.Drawing.Size(188, 30)
         Me.btn_administrator.Text = "Administrator"
         '
         'SetLineToolStripMenuItem
@@ -228,7 +222,6 @@ Partial Class subframe
     Friend WithEvents profile_menu As ContextMenuStrip
     Friend WithEvents btn_administrator As ToolStripMenuItem
     Friend WithEvents btnmenu_strip As ContextMenuStrip
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ChangePasswordToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lbl_FormName As Label
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
