@@ -3,7 +3,8 @@ Public Class scan_IN
     Dim qctimer As Integer = 0
     Dim targetcycletime As Integer = 0
     Dim countdowntimer As Integer = 0
-    Dim setID As Integer
+    Public setID As Integer
+    Dim SPQ As Integer
     Private Sub cmb_partcode_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
@@ -55,7 +56,8 @@ Public Class scan_IN
                     countdowntimer = targetcycletime
                     setID = itemId
                     panel_scan.Enabled = True
-
+                    SPQ = dr("qty").ToString
+                    lbl_qctimer.Text = "0"
                 End While
 
             End Using
@@ -123,7 +125,11 @@ Public Class scan_IN
 
         End If
 
+        If Convert.ToInt32(lbl_box.Text) >= SPQ Then
+            scanFG.ShowDialog()
+            scanFG.BringToFront()
 
+        End If
     End Sub
 
     Sub updateactual()

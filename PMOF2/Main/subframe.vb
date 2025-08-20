@@ -59,4 +59,8 @@
     Private Sub SetPlanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetPlanToolStripMenuItem.Click
         display_inSub(viewplan_scanner)
     End Sub
+
+    Private Sub OverviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OverviewToolStripMenuItem.Click
+        display_inSub(overview)
+    End Sub
 End Class

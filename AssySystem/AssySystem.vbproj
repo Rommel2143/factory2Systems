@@ -208,6 +208,13 @@
     </Compile>
     <Compile Include="Modules\CryptoModule.vb" />
     <Compile Include="Modules\excelModule.vb" />
+    <Compile Include="Modules\ProcessQR.vb" />
+    <Compile Include="Scan\scanFG.Designer.vb">
+      <DependentUpon>scanFG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Scan\scanFG.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Scan\scan_IN.designer.vb">
       <DependentUpon>scan_IN.vb</DependentUpon>
     </Compile>
@@ -287,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\subframe.resx">
       <DependentUpon>subframe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scan\scanFG.resx">
+      <DependentUpon>scanFG.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scan\scan_IN.resx">
       <DependentUpon>scan_IN.vb</DependentUpon>

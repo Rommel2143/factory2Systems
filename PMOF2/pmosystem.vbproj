@@ -191,6 +191,12 @@
     <Compile Include="Modules\CryptoModule.vb" />
     <Compile Include="Modules\excelModule.vb" />
     <Compile Include="Modules\HandleInputs.vb" />
+    <Compile Include="overview\overview.Designer.vb">
+      <DependentUpon>overview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="overview\overview.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Set Plan\viewplan_scanner.Designer.vb">
       <DependentUpon>viewplan_scanner.vb</DependentUpon>
     </Compile>
@@ -259,6 +265,9 @@
     <EmbeddedResource Include="Main\subframe.resx">
       <DependentUpon>subframe.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="overview\overview.resx">
+      <DependentUpon>overview.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Set Plan\viewplan_scanner.resx">
       <DependentUpon>viewplan_scanner.vb</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +311,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="model.ico" />
+    <None Include="Resources\eye %281%29.png" />
+    <None Include="Resources\forward %281%29.png" />
     <None Include="Resources\edit %2810%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

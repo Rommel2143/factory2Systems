@@ -26,7 +26,6 @@ Partial Class subframe
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(subframe))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnmenu_strip = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.DashboardToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetPlanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.profile_menu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.btn_user = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,6 +44,7 @@ Partial Class subframe
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.OverviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnmenu_strip.SuspendLayout()
         Me.profile_menu.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,15 +63,9 @@ Partial Class subframe
         'btnmenu_strip
         '
         Me.btnmenu_strip.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmenu_strip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DashboardToolStripMenuItem, Me.SetPlanToolStripMenuItem})
+        Me.btnmenu_strip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SetPlanToolStripMenuItem, Me.OverviewToolStripMenuItem})
         Me.btnmenu_strip.Name = "ContextMenuStrip1"
         Me.btnmenu_strip.Size = New System.Drawing.Size(191, 78)
-        '
-        'DashboardToolStripMenuItem
-        '
-        Me.DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem"
-        Me.DashboardToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
-        Me.DashboardToolStripMenuItem.Text = "Dashboard"
         '
         'SetPlanToolStripMenuItem
         '
@@ -254,6 +248,12 @@ Partial Class subframe
         Me.Guna2Panel1.Size = New System.Drawing.Size(1151, 10)
         Me.Guna2Panel1.TabIndex = 13
         '
+        'OverviewToolStripMenuItem
+        '
+        Me.OverviewToolStripMenuItem.Name = "OverviewToolStripMenuItem"
+        Me.OverviewToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
+        Me.OverviewToolStripMenuItem.Text = "Overview"
+        '
         'subframe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -296,6 +296,6 @@ Partial Class subframe
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2GradientPanel1 As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents DashboardToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SetPlanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OverviewToolStripMenuItem As ToolStripMenuItem
 End Class
