@@ -25,9 +25,10 @@ Partial Class Login
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.btn_login = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_password = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txt_idno = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GradientPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -43,7 +44,7 @@ Partial Class Login
         Me.btn_login.FillColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btn_login.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_login.ForeColor = System.Drawing.Color.White
-        Me.btn_login.Location = New System.Drawing.Point(218, 312)
+        Me.btn_login.Location = New System.Drawing.Point(236, 303)
         Me.btn_login.Name = "btn_login"
         Me.btn_login.Size = New System.Drawing.Size(165, 44)
         Me.btn_login.TabIndex = 3
@@ -55,6 +56,7 @@ Partial Class Login
         Me.Guna2GradientPanel1.BorderColor = System.Drawing.Color.White
         Me.Guna2GradientPanel1.BorderRadius = 15
         Me.Guna2GradientPanel1.BorderThickness = 2
+        Me.Guna2GradientPanel1.Controls.Add(Me.Guna2Button1)
         Me.Guna2GradientPanel1.Controls.Add(Me.btn_login)
         Me.Guna2GradientPanel1.Controls.Add(Me.txt_password)
         Me.Guna2GradientPanel1.Controls.Add(Me.txt_idno)
@@ -66,18 +68,6 @@ Partial Class Login
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
         Me.Guna2GradientPanel1.Size = New System.Drawing.Size(637, 431)
         Me.Guna2GradientPanel1.TabIndex = 4
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(48, 50)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(541, 65)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Production Management"
         '
         'txt_password
         '
@@ -95,7 +85,7 @@ Partial Class Login
         Me.txt_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_password.IconLeft = CType(resources.GetObject("txt_password.IconLeft"), System.Drawing.Image)
         Me.txt_password.IconLeftSize = New System.Drawing.Size(24, 24)
-        Me.txt_password.Location = New System.Drawing.Point(198, 241)
+        Me.txt_password.Location = New System.Drawing.Point(216, 241)
         Me.txt_password.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -120,13 +110,44 @@ Partial Class Login
         Me.txt_idno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_idno.IconLeft = CType(resources.GetObject("txt_idno.IconLeft"), System.Drawing.Image)
         Me.txt_idno.IconLeftSize = New System.Drawing.Size(24, 24)
-        Me.txt_idno.Location = New System.Drawing.Point(198, 187)
+        Me.txt_idno.Location = New System.Drawing.Point(216, 187)
         Me.txt_idno.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txt_idno.Name = "txt_idno"
         Me.txt_idno.PlaceholderText = "IDno..."
         Me.txt_idno.SelectedText = ""
         Me.txt_idno.Size = New System.Drawing.Size(205, 36)
         Me.txt_idno.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(48, 50)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(541, 65)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Production Management"
+        '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.AutoRoundedCorners = True
+        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button1.BorderRadius = 21
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
+        Me.Guna2Button1.Location = New System.Drawing.Point(236, 362)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(165, 44)
+        Me.Guna2Button1.TabIndex = 5
+        Me.Guna2Button1.Text = "Viewing Only"
         '
         'Login
         '
@@ -150,4 +171,5 @@ Partial Class Login
     Friend WithEvents txt_idno As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2GradientPanel1 As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents Label2 As Label
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
 End Class

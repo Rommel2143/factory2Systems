@@ -22,38 +22,31 @@ Partial Class overview
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(overview))
+        Me.components = New System.ComponentModel.Container()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2VSeparator1 = New Guna.UI2.WinForms.Guna2VSeparator()
         Me.Guna2RadioButton2 = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.Guna2RadioButton1 = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.dtpicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.btn_select = New Guna.UI2.WinForms.Guna2Button()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Guna2CircleProgressBar1 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Guna2GradientPanel1.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GradientPanel1
         '
+        Me.Guna2GradientPanel1.Controls.Add(Me.Guna2CircleProgressBar1)
         Me.Guna2GradientPanel1.Controls.Add(Me.Guna2Panel4)
         Me.Guna2GradientPanel1.Controls.Add(Me.dtpicker1)
-        Me.Guna2GradientPanel1.Controls.Add(Me.btn_select)
         Me.Guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2GradientPanel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
         Me.Guna2GradientPanel1.Size = New System.Drawing.Size(1259, 63)
         Me.Guna2GradientPanel1.TabIndex = 0
-        '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.AutoScroll = True
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 63)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1259, 612)
-        Me.FlowLayoutPanel1.TabIndex = 1
         '
         'Guna2Panel4
         '
@@ -88,7 +81,7 @@ Partial Class overview
         Me.Guna2RadioButton2.CheckedState.InnerOffset = -4
         Me.Guna2RadioButton2.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2RadioButton2.ForeColor = System.Drawing.Color.Black
-        Me.Guna2RadioButton2.Location = New System.Drawing.Point(144, 3)
+        Me.Guna2RadioButton2.Location = New System.Drawing.Point(145, 5)
         Me.Guna2RadioButton2.Name = "Guna2RadioButton2"
         Me.Guna2RadioButton2.Size = New System.Drawing.Size(71, 41)
         Me.Guna2RadioButton2.TabIndex = 28
@@ -110,11 +103,11 @@ Partial Class overview
         Me.Guna2RadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2RadioButton1.CheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2RadioButton1.CheckedState.InnerOffset = -4
-        Me.Guna2RadioButton1.Font = New System.Drawing.Font("Segoe UI", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2RadioButton1.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2RadioButton1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2RadioButton1.Location = New System.Drawing.Point(21, 1)
+        Me.Guna2RadioButton1.Location = New System.Drawing.Point(22, 5)
         Me.Guna2RadioButton1.Name = "Guna2RadioButton1"
-        Me.Guna2RadioButton1.Size = New System.Drawing.Size(81, 49)
+        Me.Guna2RadioButton1.Size = New System.Drawing.Size(69, 41)
         Me.Guna2RadioButton1.TabIndex = 27
         Me.Guna2RadioButton1.TabStop = True
         Me.Guna2RadioButton1.Text = "DS"
@@ -144,27 +137,43 @@ Partial Class overview
         Me.dtpicker1.TabIndex = 34
         Me.dtpicker1.Value = New Date(2025, 8, 13, 9, 22, 27, 105)
         '
-        'btn_select
+        'FlowLayoutPanel1
         '
-        Me.btn_select.AutoRoundedCorners = True
-        Me.btn_select.BackColor = System.Drawing.Color.Transparent
-        Me.btn_select.BorderRadius = 24
-        Me.btn_select.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_select.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_select.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_select.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_select.FillColor = System.Drawing.Color.ForestGreen
-        Me.btn_select.Font = New System.Drawing.Font("Segoe UI", 14.25!)
-        Me.btn_select.ForeColor = System.Drawing.Color.White
-        Me.btn_select.Image = CType(resources.GetObject("btn_select.Image"), System.Drawing.Image)
-        Me.btn_select.ImageOffset = New System.Drawing.Point(-2, 0)
-        Me.btn_select.ImageSize = New System.Drawing.Size(38, 38)
-        Me.btn_select.Location = New System.Drawing.Point(734, 6)
-        Me.btn_select.Name = "btn_select"
-        Me.btn_select.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btn_select.Size = New System.Drawing.Size(146, 50)
-        Me.btn_select.TabIndex = 35
-        Me.btn_select.Text = "Select"
+        Me.FlowLayoutPanel1.AutoScroll = True
+        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.White
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 63)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1259, 612)
+        Me.FlowLayoutPanel1.TabIndex = 1
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 60000
+        '
+        'Guna2CircleProgressBar1
+        '
+        Me.Guna2CircleProgressBar1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Guna2CircleProgressBar1.FillColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2CircleProgressBar1.FillThickness = 10
+        Me.Guna2CircleProgressBar1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2CircleProgressBar1.ForeColor = System.Drawing.Color.ForestGreen
+        Me.Guna2CircleProgressBar1.Location = New System.Drawing.Point(1196, 0)
+        Me.Guna2CircleProgressBar1.Maximum = 60
+        Me.Guna2CircleProgressBar1.Minimum = 0
+        Me.Guna2CircleProgressBar1.Name = "Guna2CircleProgressBar1"
+        Me.Guna2CircleProgressBar1.ProgressThickness = 10
+        Me.Guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CircleProgressBar1.ShowText = True
+        Me.Guna2CircleProgressBar1.Size = New System.Drawing.Size(63, 63)
+        Me.Guna2CircleProgressBar1.TabIndex = 37
+        Me.Guna2CircleProgressBar1.Text = "Guna2CircleProgressBar1"
+        Me.Guna2CircleProgressBar1.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value
+        Me.Guna2CircleProgressBar1.Value = 60
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 1000
         '
         'overview
         '
@@ -190,6 +199,8 @@ Partial Class overview
     Friend WithEvents Guna2RadioButton2 As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents Guna2RadioButton1 As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents dtpicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents btn_select As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Guna2CircleProgressBar1 As Guna.UI2.WinForms.Guna2CircleProgressBar
+    Friend WithEvents Timer2 As Timer
 End Class

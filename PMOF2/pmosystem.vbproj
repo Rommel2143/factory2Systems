@@ -8,12 +8,30 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>pmosystem.My.MyApplication</StartupObject>
     <RootNamespace>pmosystem</RootNamespace>
-    <AssemblyName>pmosystem</AssemblyName>
+    <AssemblyName>PMO</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\ptif1-ds\SystemServer\PMO\</UpdateUrl>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,7 +40,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>pmosystem.xml</DocumentationFile>
+    <DocumentationFile>PMO.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +50,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>pmosystem.xml</DocumentationFile>
+    <DocumentationFile>PMO.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -49,6 +67,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>model.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D40EC7BDF8088E6370459B272C8031A0D61D2000</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>pmosystem_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
@@ -191,6 +221,12 @@
     <Compile Include="Modules\CryptoModule.vb" />
     <Compile Include="Modules\excelModule.vb" />
     <Compile Include="Modules\HandleInputs.vb" />
+    <Compile Include="overview\liveoutput.designer.vb">
+      <DependentUpon>liveoutput.vb</DependentUpon>
+    </Compile>
+    <Compile Include="overview\liveoutput.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="overview\overview.Designer.vb">
       <DependentUpon>overview.vb</DependentUpon>
     </Compile>
@@ -265,6 +301,9 @@
     <EmbeddedResource Include="Main\subframe.resx">
       <DependentUpon>subframe.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="overview\liveoutput.resx">
+      <DependentUpon>liveoutput.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="overview\overview.resx">
       <DependentUpon>overview.vb</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +343,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="pmosystem_TemporaryKey.pfx" />
     <None Include="Resources\duplicate.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -314,6 +354,18 @@
     <None Include="Resources\eye %281%29.png" />
     <None Include="Resources\forward %281%29.png" />
     <None Include="Resources\edit %2810%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

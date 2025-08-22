@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Login
-    Public testMode As Boolean = 1
+    Public testMode As Boolean = 0
 
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         Login(txt_idno.Text.Trim(), txt_password.Text.Trim())
@@ -63,4 +63,7 @@ Public Class Login
 
     End Sub
 
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        display_inMain(overview)
+    End Sub
 End Class

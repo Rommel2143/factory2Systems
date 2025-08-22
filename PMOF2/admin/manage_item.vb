@@ -28,8 +28,8 @@ Public Class manage_item
 
             Dim insert As New MySqlCommand(query, con)
             insert.ExecuteNonQuery()
-            Me.Close()
-            show_error("Partcode Saved!", 0)
+            reload("SELECT `partcode` , `partname`, `model`,qty AS 'SPQ' FROM `assy_masterlist`", datagrid1)
+            Show_Error("Partcode Saved!", 0)
         Catch ex As Exception
             show_error(ex.Message, 0)
         End Try

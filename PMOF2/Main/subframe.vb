@@ -63,4 +63,8 @@
     Private Sub OverviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OverviewToolStripMenuItem.Click
         display_inSub(overview)
     End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        display_inSub(manage_item)
+    End Sub
 End Class
