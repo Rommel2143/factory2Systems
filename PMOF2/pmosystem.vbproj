@@ -233,6 +233,12 @@
     <Compile Include="overview\overview.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Set Plan\edit_plan.Designer.vb">
+      <DependentUpon>edit_plan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Set Plan\edit_plan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Set Plan\viewplan_scanner.Designer.vb">
       <DependentUpon>viewplan_scanner.vb</DependentUpon>
     </Compile>
@@ -306,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="overview\overview.resx">
       <DependentUpon>overview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Set Plan\edit_plan.resx">
+      <DependentUpon>edit_plan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Set Plan\viewplan_scanner.resx">
       <DependentUpon>viewplan_scanner.vb</DependentUpon>

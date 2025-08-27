@@ -2,15 +2,17 @@
 Public Class manage_item
     Dim selectedpart As String
     Private Sub manage_item_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        reload("SELECT `partcode` , `partname`, `model`,qty AS 'SPQ' FROM `assy_masterlist`", datagrid1)
+        loaddata()
     End Sub
-
+    Sub loaddata()
+        reload("SELECT `partcode` , `partname`, `model`,modelcode,qty AS 'SPQ' FROM `assy_masterlist`", datagrid1)
+    End Sub
     Private Sub Guna2TextBox4_TextChanged(sender As Object, e As EventArgs) Handles txt_plan.TextChanged
 
 
     End Sub
 
-    Private Sub txt_plan_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_plan.KeyPress, txt_boxitem.KeyPress, txt_cycletime.KeyPress
+    Private Sub txt_plan_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_plan.KeyPress, txt_boxitem.KeyPress
         ' Allow only numbers and control keys
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True ' Block the input
@@ -18,24 +20,39 @@ Public Class manage_item
 
     End Sub
 
+
+
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         Try
+            If txt_partcode.Text = "" OrElse txt_partname.Text = "" OrElse txt_model.Text = "" OrElse txt_modelcode.Text = "" OrElse txt_plan.Text = "" OrElse txt_boxitem.Text = "" Then
+                MessageBox.Show("Please fill all fields.")
+                Exit Sub
+            End If
 
-
-            Dim query As String = "INSERT INTO `assy_masterlist`(`partcode`, `partname`, `model`, `modelcode`, `planset`, `cycleset`, `qty`) VALUES ('" & txt_partcode.Text & "','" & txt_partname.Text & "','" & txt_model.Text & "','" & txt_modelcode.Text & "','" & txt_plan.Text & "','" & txt_cycletime.Text & "','" & txt_boxitem.Text & "')"
+            Dim query As String = "INSERT INTO `assy_masterlist`(`partcode`, `partname`, `model`, `modelcode`, `planset`, `qty`) VALUES ('" & txt_partcode.Text & "','" & txt_partname.Text & "','" & txt_model.Text & "','" & txt_modelcode.Text & "','" & txt_plan.Text & "','" & txt_boxitem.Text & "')"
             con.Close()
             con.Open()
 
             Dim insert As New MySqlCommand(query, con)
             insert.ExecuteNonQuery()
-            reload("SELECT `partcode` , `partname`, `model`,qty AS 'SPQ' FROM `assy_masterlist`", datagrid1)
+
+            loaddata()
             Show_Error("Partcode Saved!", 0)
+            clear()
+
         Catch ex As Exception
-            show_error(ex.Message, 0)
+            Show_Error(ex.Message, 0)
         End Try
     End Sub
 
-
+    Private Sub clear()
+        txt_partcode.Text = ""
+        txt_partname.Text = ""
+        txt_model.Text = ""
+        txt_modelcode.Text = ""
+        txt_plan.Text = ""
+        txt_boxitem.Text = ""
+    End Sub
 
     Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
 
@@ -49,7 +66,7 @@ Public Class manage_item
     Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles btn_update.Click
         Try
             Dim query As String = "UPDATE `assy_masterlist` " &
-                              "SET partcode=@partcode,`partname` = @partname, `model` = @model, `modelcode` = @modelcode, `planset` = @planset, `cycleset` = @cycleset, `qty` = @qty " &
+                              "SET partcode=@partcode,`partname` = @partname, `model` = @model, `modelcode` = @modelcode, `planset` = @planset, `cycleset` = 0, `qty` = @qty " &
                               "WHERE `partcode` = '" & selectedpart & "'"
 
             con.Close()
@@ -62,7 +79,6 @@ Public Class manage_item
                 .AddWithValue("@model", txt_model.Text)
                 .AddWithValue("@modelcode", txt_modelcode.Text)
                 .AddWithValue("@planset", txt_plan.Text)
-                .AddWithValue("@cycleset", txt_cycletime.Text)
                 .AddWithValue("@qty", txt_boxitem.Text)
             End With
 
@@ -73,7 +89,7 @@ Public Class manage_item
             Else
                 show_error("No record found with the given Partcode!", 1)
             End If
-
+            clear()
         Catch ex As Exception
             show_error(ex.Message, 0)
         Finally
@@ -94,7 +110,6 @@ Public Class manage_item
             txt_model.Text = dr.GetString("model")
             txt_modelcode.Text = dr.GetString("modelcode")
             txt_plan.Text = dr.GetInt32("planset")
-            txt_cycletime.Text = dr.GetInt32("cycleset")
             txt_boxitem.Text = dr.GetInt32("qty")
             btn_update.Enabled = True
         End If

@@ -37,4 +37,21 @@
     Private Sub Guna2DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles Guna2DateTimePicker1.ValueChanged, Guna2RadioButton1.CheckedChanged, Guna2RadioButton2.CheckedChanged
         reloadplan()
     End Sub
+
+    Private Sub datagrid1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid1.CellContentClick
+        ' Prevent errors if user clicks header or outside valid cells
+        If e.RowIndex < 0 OrElse e.ColumnIndex < 0 Then Exit Sub
+
+        ' Check if ActionImage column is clicked
+        If datagrid1.Columns(e.ColumnIndex).Name = "ActionImage" Then
+            ' Example: Get ID or any value from the selected row
+            Dim id As String = datagrid1.Rows(e.RowIndex).Cells("id").Value.ToString()
+
+
+            Dim editplan As New edit_plan
+            editplan.loadset(id)
+            editplan.ShowDialog()
+            editplan.BringToFront()
+        End If
+    End Sub
 End Class
