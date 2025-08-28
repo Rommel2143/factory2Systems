@@ -31,7 +31,28 @@
 
 
     Public Sub reloadplan()
-        reload("SELECT id, location,line,partcode,plan,duration AS 'Duration(Hrs)',cycletime FROM prod_plan WHERE datein='" & Guna2DateTimePicker1.Value.ToString("yyy-MM-dd") & "' AND shift='" & If(Guna2RadioButton1.Checked = True, 1, 0) & "' AND location ='SCANNER'", datagrid1)
+        reload("SELECT id, location,line,partcode,plan,duration AS 'Duration(Hrs)',cycletime 
+            FROM prod_plan 
+            WHERE datein='" & Guna2DateTimePicker1.Value.ToString("yyyy-MM-dd") & "' 
+            AND shift='" & If(Guna2RadioButton1.Checked = True, 1, 0) & "' 
+            AND location ='SCANNER'", datagrid1)
+
+        ' Ensure ActionImage column is present after reload
+        If Not datagrid1.Columns.Contains("ActionImage") Then
+            Dim imgColumn As New DataGridViewImageColumn()
+            imgColumn.Name = "ActionImage"
+            imgColumn.HeaderText = "Action"
+            imgColumn.Image = My.Resources.editBtn
+            datagrid1.Columns.Insert(0, imgColumn)
+            datagrid1.Columns(0).Width = 50
+        End If
+
+        ' Hide/Show column based on date
+        If Guna2DateTimePicker1.Value < Date.Now.Date Then
+            datagrid1.Columns("ActionImage").Visible = False
+        Else
+            datagrid1.Columns("ActionImage").Visible = True
+        End If
     End Sub
 
     Private Sub Guna2DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles Guna2DateTimePicker1.ValueChanged, Guna2RadioButton1.CheckedChanged, Guna2RadioButton2.CheckedChanged

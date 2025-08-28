@@ -28,7 +28,6 @@ Public Class setplan
     End Sub
 
     Private Sub setplan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         cmb_display("SELECT line FROM prod_PCline GROUP BY line", cmb_line)
     End Sub
 

@@ -24,6 +24,7 @@ Partial Class overview
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.Guna2CircleProgressBar1 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2VSeparator1 = New Guna.UI2.WinForms.Guna2VSeparator()
         Me.Guna2RadioButton2 = New Guna.UI2.WinForms.Guna2RadioButton()
@@ -31,7 +32,6 @@ Partial Class overview
         Me.dtpicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Guna2CircleProgressBar1 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Guna2GradientPanel1.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
@@ -47,6 +47,26 @@ Partial Class overview
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
         Me.Guna2GradientPanel1.Size = New System.Drawing.Size(1259, 63)
         Me.Guna2GradientPanel1.TabIndex = 0
+        '
+        'Guna2CircleProgressBar1
+        '
+        Me.Guna2CircleProgressBar1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Guna2CircleProgressBar1.FillColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.Guna2CircleProgressBar1.FillThickness = 10
+        Me.Guna2CircleProgressBar1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2CircleProgressBar1.ForeColor = System.Drawing.Color.ForestGreen
+        Me.Guna2CircleProgressBar1.Location = New System.Drawing.Point(1196, 0)
+        Me.Guna2CircleProgressBar1.Maximum = 60
+        Me.Guna2CircleProgressBar1.Minimum = 0
+        Me.Guna2CircleProgressBar1.Name = "Guna2CircleProgressBar1"
+        Me.Guna2CircleProgressBar1.ProgressThickness = 10
+        Me.Guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CircleProgressBar1.ShowText = True
+        Me.Guna2CircleProgressBar1.Size = New System.Drawing.Size(63, 63)
+        Me.Guna2CircleProgressBar1.TabIndex = 37
+        Me.Guna2CircleProgressBar1.Text = "Guna2CircleProgressBar1"
+        Me.Guna2CircleProgressBar1.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value
+        Me.Guna2CircleProgressBar1.Value = 60
         '
         'Guna2Panel4
         '
@@ -151,26 +171,6 @@ Partial Class overview
         '
         Me.Timer1.Interval = 60000
         '
-        'Guna2CircleProgressBar1
-        '
-        Me.Guna2CircleProgressBar1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2CircleProgressBar1.FillColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.Guna2CircleProgressBar1.FillThickness = 10
-        Me.Guna2CircleProgressBar1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2CircleProgressBar1.ForeColor = System.Drawing.Color.ForestGreen
-        Me.Guna2CircleProgressBar1.Location = New System.Drawing.Point(1196, 0)
-        Me.Guna2CircleProgressBar1.Maximum = 60
-        Me.Guna2CircleProgressBar1.Minimum = 0
-        Me.Guna2CircleProgressBar1.Name = "Guna2CircleProgressBar1"
-        Me.Guna2CircleProgressBar1.ProgressThickness = 10
-        Me.Guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CircleProgressBar1.ShowText = True
-        Me.Guna2CircleProgressBar1.Size = New System.Drawing.Size(63, 63)
-        Me.Guna2CircleProgressBar1.TabIndex = 37
-        Me.Guna2CircleProgressBar1.Text = "Guna2CircleProgressBar1"
-        Me.Guna2CircleProgressBar1.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value
-        Me.Guna2CircleProgressBar1.Value = 60
-        '
         'Timer2
         '
         Me.Timer2.Interval = 1000
@@ -184,7 +184,7 @@ Partial Class overview
         Me.Controls.Add(Me.Guna2GradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "overview"
-        Me.Text = "overview"
+        Me.Text = "Overview"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Guna2GradientPanel1.ResumeLayout(False)
         Me.Guna2Panel4.ResumeLayout(False)
