@@ -23,6 +23,7 @@ Partial Class overview
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(overview))
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.Guna2CircleProgressBar1 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
@@ -33,12 +34,16 @@ Partial Class overview
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Guna2VSeparator2 = New Guna.UI2.WinForms.Guna2VSeparator()
+        Me.btn_view = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GradientPanel1.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GradientPanel1
         '
+        Me.Guna2GradientPanel1.Controls.Add(Me.Guna2VSeparator2)
+        Me.Guna2GradientPanel1.Controls.Add(Me.btn_view)
         Me.Guna2GradientPanel1.Controls.Add(Me.Guna2CircleProgressBar1)
         Me.Guna2GradientPanel1.Controls.Add(Me.Guna2Panel4)
         Me.Guna2GradientPanel1.Controls.Add(Me.dtpicker1)
@@ -175,6 +180,29 @@ Partial Class overview
         '
         Me.Timer2.Interval = 1000
         '
+        'Guna2VSeparator2
+        '
+        Me.Guna2VSeparator2.Location = New System.Drawing.Point(744, 8)
+        Me.Guna2VSeparator2.Name = "Guna2VSeparator2"
+        Me.Guna2VSeparator2.Size = New System.Drawing.Size(10, 47)
+        Me.Guna2VSeparator2.TabIndex = 39
+        '
+        'btn_view
+        '
+        Me.btn_view.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_view.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_view.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_view.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_view.FillColor = System.Drawing.Color.Transparent
+        Me.btn_view.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_view.ForeColor = System.Drawing.Color.White
+        Me.btn_view.Image = CType(resources.GetObject("btn_view.Image"), System.Drawing.Image)
+        Me.btn_view.ImageSize = New System.Drawing.Size(24, 24)
+        Me.btn_view.Location = New System.Drawing.Point(772, 11)
+        Me.btn_view.Name = "btn_view"
+        Me.btn_view.Size = New System.Drawing.Size(40, 40)
+        Me.btn_view.TabIndex = 38
+        '
         'overview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -203,4 +231,6 @@ Partial Class overview
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Guna2CircleProgressBar1 As Guna.UI2.WinForms.Guna2CircleProgressBar
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents btn_view As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2VSeparator2 As Guna.UI2.WinForms.Guna2VSeparator
 End Class

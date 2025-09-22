@@ -1,7 +1,140 @@
 ﻿Imports Guna.UI2.WinForms
 Imports MySql.Data.MySqlClient
 Public Class overview
+    Dim viewing As Boolean = 0
+    ' Call this once on form load to create the header
+    Private Sub CreateHeader()
+        Dim headerPanel As New Panel()
+        With headerPanel
+            .Height = 40
+            .Width = FlowLayoutPanel1.Width - 20
+            .BackColor = Color.FromArgb(230, 230, 230) ' light gray
+            .Margin = New Padding(0, 0, 0, 2)
+        End With
 
+        ' Helper for header labels
+        Dim makeHeader = Function(txt As String, x As Integer, w As Integer) As Label
+                             Dim lbl As New Label()
+                             With lbl
+                                 .Text = txt
+                                 .AutoSize = False
+                                 .Width = w
+                                 .Height = headerPanel.Height
+                                 .Location = New Point(x, 0)
+                                 .TextAlign = ContentAlignment.MiddleCenter
+                                 .Font = New Font("Segoe UI", 10, FontStyle.Bold)
+                                 .ForeColor = Color.MidnightBlue
+                                 .BackColor = Color.Transparent
+                             End With
+                             Return lbl
+                         End Function
+
+        ' Column widths (same as fgCard)
+        Dim colLine As Integer = 100
+        Dim colModel As Integer = 200
+        Dim colPlan As Integer = 80
+        Dim colTarget As Integer = 80
+        Dim colActual As Integer = 80
+        Dim colProgress As Integer = 200
+
+        ' Add headers
+        headerPanel.Controls.Add(makeHeader("Line", 5, colLine))
+        headerPanel.Controls.Add(makeHeader("Model", 5 + colLine, colModel))
+        headerPanel.Controls.Add(makeHeader("Plan", 5 + colLine + colModel, colPlan))
+        headerPanel.Controls.Add(makeHeader("Target", 5 + colLine + colModel + colPlan, colTarget))
+        headerPanel.Controls.Add(makeHeader("Actual", 5 + colLine + colModel + colPlan + colTarget, colActual))
+        headerPanel.Controls.Add(makeHeader("Progress", 5 + colLine + colModel + colPlan + colTarget + colActual, colProgress))
+
+        ' Add header to FlowLayoutPanel
+        FlowLayoutPanel1.Controls.Add(headerPanel)
+    End Sub
+
+
+    ' Call this for each data row
+    Private Sub fgDetails(line As String, partcodemodel As String, plan As String, Target As String, actual As String, id As String)
+        Dim rowPanel As New Panel()
+        With rowPanel
+            .Height = 40
+            .Width = FlowLayoutPanel1.Width - 20
+            .BackColor = Color.FromArgb(245, 247, 250) ' soft modern gray
+            .Margin = New Padding(0, 0, 0, 5)
+        End With
+
+        ' Label helper
+        Dim makeLabel = Function(txt As String, x As Integer, w As Integer, bold As Boolean, center As Boolean) As Label
+                            Dim lbl As New Label()
+                            With lbl
+                                .Text = txt
+                                .AutoSize = False
+                                .Width = w
+                                .Height = rowPanel.Height
+                                .Location = New Point(x, 0)
+                                .TextAlign = If(center, ContentAlignment.MiddleCenter, ContentAlignment.MiddleLeft)
+                                .Font = New Font("Segoe UI", 10, If(bold, FontStyle.Bold, FontStyle.Regular))
+                                .ForeColor = Color.Black
+                                .BackColor = Color.Transparent
+                                .Padding = New Padding(5, 0, 5, 0)
+                            End With
+                            Return lbl
+                        End Function
+
+        ' Separator helper
+        Dim makeSeparator = Function(x As Integer) As Panel
+                                Dim sep As New Panel()
+                                With sep
+                                    .Width = 1
+                                    .Height = rowPanel.Height - 10
+                                    .BackColor = Color.LightGray
+                                    .Location = New Point(x, 5)
+                                End With
+                                Return sep
+                            End Function
+
+        ' Column widths
+        Dim colLine As Integer = 100
+        Dim colModel As Integer = 200
+        Dim colPlan As Integer = 80
+        Dim colTarget As Integer = 80
+        Dim colActual As Integer = 80
+        Dim colProgress As Integer = 200
+
+        ' Labels + Separators
+        rowPanel.Controls.Add(makeLabel(line, 5, colLine, True, True))
+        rowPanel.Controls.Add(makeSeparator(5 + colLine))
+
+        rowPanel.Controls.Add(makeLabel(partcodemodel, 5 + colLine + 1, colModel, False, False))
+        rowPanel.Controls.Add(makeSeparator(5 + colLine + colModel + 1))
+
+        rowPanel.Controls.Add(makeLabel(plan, 5 + colLine + colModel + 2, colPlan, False, True))
+        rowPanel.Controls.Add(makeSeparator(5 + colLine + colModel + colPlan + 2))
+
+        rowPanel.Controls.Add(makeLabel(Target, 5 + colLine + colModel + colPlan + 3, colTarget, False, True))
+        rowPanel.Controls.Add(makeSeparator(5 + colLine + colModel + colPlan + colTarget + 3))
+
+        ' Actual
+        Dim lblActual = makeLabel(actual, 5 + colLine + colModel + colPlan + colTarget + 4, colActual, True, True)
+        lblActual.ForeColor = If(CInt(actual) >= CInt(plan), Color.SeaGreen, Color.IndianRed)
+        rowPanel.Controls.Add(lblActual)
+        rowPanel.Controls.Add(makeSeparator(5 + colLine + colModel + colPlan + colTarget + colActual + 4))
+
+        ' Progress bar
+        Dim progress As New Guna.UI2.WinForms.Guna2ProgressBar()
+        With progress
+            .Width = colProgress - 10
+            .Height = 20
+            .Location = New Point(5 + colLine + colModel + colPlan + colTarget + colActual + 6, (rowPanel.Height - .Height) \ 2)
+            .Maximum = CInt(plan)
+            .Value = Math.Min(CInt(actual), CInt(plan))
+            .BorderRadius = 8
+            .FillColor = Color.LightGray
+            .ProgressColor = If(CInt(actual) >= CInt(plan), Color.SeaGreen, Color.OrangeRed)
+            .ProgressColor2 = Color.DodgerBlue
+            .GradientMode = Drawing2D.LinearGradientMode.Horizontal
+        End With
+        rowPanel.Controls.Add(progress)
+
+        FlowLayoutPanel1.Controls.Add(rowPanel)
+    End Sub
 
 
 
@@ -208,15 +341,28 @@ Public Class overview
                 dr = cmd.ExecuteReader
                 FlowLayoutPanel1.Controls.Clear()
 
-                While dr.Read = True
-                    Dim tittle As String = "LINE " & dr("line")
-                    Dim model As String = dr("model")
-                    Dim plan As String = dr("plan")
-                    Dim id As String = dr("id")
-                    Dim target As String = dr("target_output")
-                    Dim actual As String = dr("actual_output")
-                    fgCard(tittle, model, plan, target, actual, id)
+                While dr.Read()
+                    Dim tittle As String = "LINE " & dr("line").ToString()
+                    Dim model As String = dr("model").ToString()
+                    Dim plan As String = dr("plan").ToString()
+                    Dim id As String = dr("id").ToString()
+                    Dim target As String = dr("target_output").ToString()
+                    Dim actual As String = dr("actual_output").ToString()
+
+                    If viewing Then
+                        ' Card view, no header
+                        fgCard(tittle, model, plan, target, actual, id)
+                        btn_view.Image = My.Resources.details
+                    Else
+                        ' Details view, show header once
+                        If FlowLayoutPanel1.Controls.Count = 0 Then
+                            CreateHeader()
+                        End If
+                        fgDetails(tittle, model, plan, target, actual, id)
+                        btn_view.Image = My.Resources.grid
+                    End If
                 End While
+
             End Using
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -246,5 +392,10 @@ Public Class overview
         End If
     End Sub
 
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_view.Click
+        viewing = Not viewing
+
+        loadOUTPUT()
+    End Sub
 
 End Class
