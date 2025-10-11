@@ -1,7 +1,8 @@
-﻿Public Class viewplan_scanner
+﻿
+Public Class viewplan_adf
     Private Sub btn_start_Click(sender As Object, e As EventArgs) Handles btn_start.Click
-        Dim setprod As New setplan
-        setprod.lineLocation = "SCANNER"
+        Dim setprod As New setplan_ADF
+        setprod.lineLocation = "ADF"
         setprod.dateplan = Guna2DateTimePicker1.Value.ToString("yyyy-MM-dd")
         setprod.shiftplan = If(Guna2RadioButton1.Checked = True, 1, 0)
 
@@ -35,7 +36,7 @@
             FROM prod_plan 
             WHERE datein='" & Guna2DateTimePicker1.Value.ToString("yyyy-MM-dd") & "' 
             AND shift='" & If(Guna2RadioButton1.Checked = True, 1, 0) & "' 
-            AND location ='SCANNER'", datagrid1)
+            AND location ='ADF'", datagrid1)
 
         ' Ensure ActionImage column is present after reload
         If Not datagrid1.Columns.Contains("ActionImage") Then
@@ -70,7 +71,7 @@
 
 
             Dim editplan As New edit_plan
-            editplan.loadset(id, "SCANNER")
+            editplan.loadset(id, "ADF")
             editplan.ShowDialog()
             editplan.BringToFront()
         End If

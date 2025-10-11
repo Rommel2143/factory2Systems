@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class setplan
+Public Class setplan_ADF
     Public lineLocation As String
     Public dateplan As String
     Public shiftplan As Boolean
@@ -72,7 +72,7 @@ Public Class setplan
                 con.Close()
                 con.Open()
                 cmd.ExecuteNonQuery()
-                viewplan_scanner.reloadplan()
+                viewplan_adf.reloadplan()
                 Me.Close()
 
             End Using

@@ -5,7 +5,7 @@ Public Class manage_item
         loaddata()
     End Sub
     Sub loaddata()
-        reload("SELECT `partcode` , `partname`, `model`,modelcode,qty AS 'SPQ' FROM `assy_masterlist`", datagrid1)
+        reload("SELECT id, `partcode` , `partname`, `model`,modelcode,qty AS 'SPQ' FROM `assy_masterlist`", datagrid1)
     End Sub
     Private Sub Guna2TextBox4_TextChanged(sender As Object, e As EventArgs) Handles txt_plan.TextChanged
 
@@ -24,12 +24,12 @@ Public Class manage_item
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         Try
-            If txt_partcode.Text = "" OrElse txt_partname.Text = "" OrElse txt_model.Text = "" OrElse txt_modelcode.Text = "" OrElse txt_plan.Text = "" OrElse txt_boxitem.Text = "" Then
+            If txt_partcode.Text = "" OrElse txt_partname.Text = "" OrElse txt_model.Text = "" OrElse txt_modelcode.Text = "" OrElse txt_plan.Text = "" OrElse txt_boxitem.Text = "" OrElse cmb_located.SelectedIndex = -1 Then
                 MessageBox.Show("Please fill all fields.")
                 Exit Sub
             End If
 
-            Dim query As String = "INSERT INTO `assy_masterlist`(`partcode`, `partname`, `model`, `modelcode`, `planset`, `qty`) VALUES ('" & txt_partcode.Text & "','" & txt_partname.Text & "','" & txt_model.Text & "','" & txt_modelcode.Text & "','" & txt_plan.Text & "','" & txt_boxitem.Text & "')"
+            Dim query As String = "INSERT INTO `assy_masterlist`(`partcode`, `partname`, `model`, `modelcode`, `planset`, `qty`,location) VALUES ('" & txt_partcode.Text & "','" & txt_partname.Text & "','" & txt_model.Text & "','" & txt_modelcode.Text & "','" & txt_plan.Text & "','" & txt_boxitem.Text & "','" & cmb_located.Text & "')"
             con.Close()
             con.Open()
 

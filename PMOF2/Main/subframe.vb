@@ -1,14 +1,5 @@
 ﻿Public Class subframe
 
-
-
-
-
-
-
-
-
-
     Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
 
         display_inMain(Login)
@@ -57,7 +48,7 @@
 
 
     Private Sub SetPlanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetPlanToolStripMenuItem.Click
-        display_inSub(viewplan_scanner)
+
     End Sub
 
     Private Sub OverviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OverviewToolStripMenuItem.Click
@@ -66,5 +57,13 @@
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         display_inSub(manage_item)
+    End Sub
+
+    Private Sub ADFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ADFToolStripMenuItem.Click
+        display_inSub(viewplan_adf)
+    End Sub
+
+    Private Sub SCANNERToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SCANNERToolStripMenuItem.Click
+        display_inSub(viewplan_scanner)
     End Sub
 End Class

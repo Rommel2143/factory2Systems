@@ -108,9 +108,9 @@ Partial Class setplan
         Me.btn_start.FillColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btn_start.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btn_start.ForeColor = System.Drawing.Color.White
-        Me.btn_start.Location = New System.Drawing.Point(168, 118)
+        Me.btn_start.Location = New System.Drawing.Point(17, 118)
         Me.btn_start.Name = "btn_start"
-        Me.btn_start.Size = New System.Drawing.Size(169, 43)
+        Me.btn_start.Size = New System.Drawing.Size(455, 43)
         Me.btn_start.TabIndex = 22
         Me.btn_start.Text = "Set"
         '
@@ -309,9 +309,9 @@ Partial Class setplan
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(12, 12)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(146, 21)
+        Me.Label2.Size = New System.Drawing.Size(221, 21)
         Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Set Production Plan"
+        Me.Label2.Text = "Set SCANNER Production Plan"
         '
         'Guna2ControlBox1
         '

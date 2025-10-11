@@ -117,21 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_view.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADPSURBVEhL7VRB
-        CsJADBx9SvVV2mcIIigIFfGN6kP0pMyygRBSEhGWHjowUCczbpuEBRphCaAHsFfcAljU+hrATtX4TC2T
-        LaDh45BG4unU7slswdkxkNQJqwsz2ZTJ6tM7YKyPm1p/OLVoBpIt4MQ5lJsiDbIJKwAnVTtWLZNtA+60
-        XUW2Rd7yCuCtany+JLMFB6eHJHVC/7nwlcwWRJtgdWEmmzJZ/ecDos/8u0UcFPdaG/i7q3UO1A55SGbb
-        ILpy5+s6NFl9egeM9XG+rvEFliMv18kNrVIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="Guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="Timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>106, 17</value>
   </metadata>
 </root>

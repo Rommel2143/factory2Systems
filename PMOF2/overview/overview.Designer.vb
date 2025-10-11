@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class overview
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,24 +20,36 @@ Partial Class overview
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(overview))
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.Guna2VSeparator2 = New Guna.UI2.WinForms.Guna2VSeparator()
+        Me.btn_view = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2CircleProgressBar1 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2VSeparator1 = New Guna.UI2.WinForms.Guna2VSeparator()
         Me.Guna2RadioButton2 = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.Guna2RadioButton1 = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.dtpicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.Guna2VSeparator2 = New Guna.UI2.WinForms.Guna2VSeparator()
-        Me.btn_view = New Guna.UI2.WinForms.Guna2Button()
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Guna2GradientPanel1.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.Panel2.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
+        Me.Guna2Panel1.SuspendLayout()
+        Me.Guna2Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GradientPanel1
@@ -52,6 +64,29 @@ Partial Class overview
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
         Me.Guna2GradientPanel1.Size = New System.Drawing.Size(1259, 63)
         Me.Guna2GradientPanel1.TabIndex = 0
+        '
+        'Guna2VSeparator2
+        '
+        Me.Guna2VSeparator2.Location = New System.Drawing.Point(744, 8)
+        Me.Guna2VSeparator2.Name = "Guna2VSeparator2"
+        Me.Guna2VSeparator2.Size = New System.Drawing.Size(10, 47)
+        Me.Guna2VSeparator2.TabIndex = 39
+        '
+        'btn_view
+        '
+        Me.btn_view.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_view.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_view.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_view.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_view.FillColor = System.Drawing.Color.Transparent
+        Me.btn_view.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_view.ForeColor = System.Drawing.Color.White
+        Me.btn_view.Image = CType(resources.GetObject("btn_view.Image"), System.Drawing.Image)
+        Me.btn_view.ImageSize = New System.Drawing.Size(24, 24)
+        Me.btn_view.Location = New System.Drawing.Point(772, 11)
+        Me.btn_view.Name = "btn_view"
+        Me.btn_view.Size = New System.Drawing.Size(40, 40)
+        Me.btn_view.TabIndex = 38
         '
         'Guna2CircleProgressBar1
         '
@@ -162,16 +197,6 @@ Partial Class overview
         Me.dtpicker1.TabIndex = 34
         Me.dtpicker1.Value = New Date(2025, 8, 13, 9, 22, 27, 105)
         '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.AutoScroll = True
-        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.White
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 63)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1259, 612)
-        Me.FlowLayoutPanel1.TabIndex = 1
-        '
         'Timer1
         '
         Me.Timer1.Interval = 60000
@@ -180,35 +205,94 @@ Partial Class overview
         '
         Me.Timer2.Interval = 1000
         '
-        'Guna2VSeparator2
+        'SplitContainer1
         '
-        Me.Guna2VSeparator2.Location = New System.Drawing.Point(744, 8)
-        Me.Guna2VSeparator2.Name = "Guna2VSeparator2"
-        Me.Guna2VSeparator2.Size = New System.Drawing.Size(10, 47)
-        Me.Guna2VSeparator2.TabIndex = 39
+        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 63)
+        Me.SplitContainer1.Name = "SplitContainer1"
         '
-        'btn_view
+        'SplitContainer1.Panel1
         '
-        Me.btn_view.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_view.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_view.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_view.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_view.FillColor = System.Drawing.Color.Transparent
-        Me.btn_view.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btn_view.ForeColor = System.Drawing.Color.White
-        Me.btn_view.Image = CType(resources.GetObject("btn_view.Image"), System.Drawing.Image)
-        Me.btn_view.ImageSize = New System.Drawing.Size(24, 24)
-        Me.btn_view.Location = New System.Drawing.Point(772, 11)
-        Me.btn_view.Name = "btn_view"
-        Me.btn_view.Size = New System.Drawing.Size(40, 40)
-        Me.btn_view.TabIndex = 38
+        Me.SplitContainer1.Panel1.Controls.Add(Me.FlowLayoutPanel1)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Guna2Panel3)
+        '
+        'SplitContainer1.Panel2
+        '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.FlowLayoutPanel2)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Guna2Panel1)
+        Me.SplitContainer1.Size = New System.Drawing.Size(1259, 612)
+        Me.SplitContainer1.SplitterDistance = 634
+        Me.SplitContainer1.TabIndex = 3
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.AutoScroll = True
+        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.White
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 35)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(634, 577)
+        Me.FlowLayoutPanel1.TabIndex = 2
+        '
+        'FlowLayoutPanel2
+        '
+        Me.FlowLayoutPanel2.AutoScroll = True
+        Me.FlowLayoutPanel2.BackColor = System.Drawing.Color.White
+        Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(0, 35)
+        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(621, 577)
+        Me.FlowLayoutPanel2.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(281, 1)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 32)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "ADF"
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Controls.Add(Me.Label2)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel1.FillColor = System.Drawing.Color.WhiteSmoke
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(621, 35)
+        Me.Guna2Panel1.TabIndex = 5
+        '
+        'Guna2Panel3
+        '
+        Me.Guna2Panel3.Controls.Add(Me.Label4)
+        Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel3.FillColor = System.Drawing.Color.WhiteSmoke
+        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel3.Name = "Guna2Panel3"
+        Me.Guna2Panel3.Size = New System.Drawing.Size(634, 35)
+        Me.Guna2Panel3.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(257, 1)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(121, 32)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "SCANNER"
         '
         'overview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1259, 675)
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.Guna2GradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "overview"
@@ -217,6 +301,14 @@ Partial Class overview
         Me.Guna2GradientPanel1.ResumeLayout(False)
         Me.Guna2Panel4.ResumeLayout(False)
         Me.Guna2Panel4.PerformLayout()
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.ResumeLayout(False)
+        Me.Guna2Panel1.ResumeLayout(False)
+        Me.Guna2Panel1.PerformLayout()
+        Me.Guna2Panel3.ResumeLayout(False)
+        Me.Guna2Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -227,10 +319,16 @@ Partial Class overview
     Friend WithEvents Guna2RadioButton2 As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents Guna2RadioButton1 As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents dtpicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Guna2CircleProgressBar1 As Guna.UI2.WinForms.Guna2CircleProgressBar
     Friend WithEvents Timer2 As Timer
     Friend WithEvents btn_view As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2VSeparator2 As Guna.UI2.WinForms.Guna2VSeparator
+    Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
 End Class
