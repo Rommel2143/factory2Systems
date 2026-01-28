@@ -8,8 +8,6 @@ Public Class Login
 
     Private Sub Login(username As String, password As String)
 
-
-
         ' Check if fields are empty
         If username = "" Then
             Show_Error("Please enter ID number.", SOUND_NONE)

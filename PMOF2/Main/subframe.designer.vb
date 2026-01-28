@@ -27,6 +27,8 @@ Partial Class subframe
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnmenu_strip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SetPlanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SCANNERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ADFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OverviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.profile_menu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.btn_user = New System.Windows.Forms.ToolStripMenuItem()
@@ -46,8 +48,7 @@ Partial Class subframe
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.btn_menu = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.SCANNERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ADFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddQAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnmenu_strip.SuspendLayout()
         Me.profile_menu.SuspendLayout()
         Me.Guna2GradientPanel1.SuspendLayout()
@@ -68,7 +69,7 @@ Partial Class subframe
         Me.btnmenu_strip.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmenu_strip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SetPlanToolStripMenuItem, Me.OverviewToolStripMenuItem})
         Me.btnmenu_strip.Name = "ContextMenuStrip1"
-        Me.btnmenu_strip.Size = New System.Drawing.Size(191, 78)
+        Me.btnmenu_strip.Size = New System.Drawing.Size(191, 56)
         '
         'SetPlanToolStripMenuItem
         '
@@ -76,6 +77,18 @@ Partial Class subframe
         Me.SetPlanToolStripMenuItem.Name = "SetPlanToolStripMenuItem"
         Me.SetPlanToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.SetPlanToolStripMenuItem.Text = "Production Plan"
+        '
+        'SCANNERToolStripMenuItem
+        '
+        Me.SCANNERToolStripMenuItem.Name = "SCANNERToolStripMenuItem"
+        Me.SCANNERToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
+        Me.SCANNERToolStripMenuItem.Text = "SCANNER"
+        '
+        'ADFToolStripMenuItem
+        '
+        Me.ADFToolStripMenuItem.Name = "ADFToolStripMenuItem"
+        Me.ADFToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
+        Me.ADFToolStripMenuItem.Text = "ADF"
         '
         'OverviewToolStripMenuItem
         '
@@ -87,7 +100,7 @@ Partial Class subframe
         '
         Me.profile_menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_user, Me.ToolStripSeparator1, Me.ToolStripMenuItem1, Me.btn_administrator, Me.LogoutToolStripMenuItem})
         Me.profile_menu.Name = "ContextMenuStrip1"
-        Me.profile_menu.Size = New System.Drawing.Size(182, 130)
+        Me.profile_menu.Size = New System.Drawing.Size(189, 152)
         '
         'btn_user
         '
@@ -97,7 +110,7 @@ Partial Class subframe
         Me.btn_user.Image = CType(resources.GetObject("btn_user.Image"), System.Drawing.Image)
         Me.btn_user.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.btn_user.Name = "btn_user"
-        Me.btn_user.Size = New System.Drawing.Size(181, 30)
+        Me.btn_user.Size = New System.Drawing.Size(188, 30)
         Me.btn_user.Text = "User"
         '
         'ChangePasswordToolStripMenuItem
@@ -109,38 +122,38 @@ Partial Class subframe
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(178, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(185, 6)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(181, 30)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(188, 30)
         Me.ToolStripMenuItem1.Text = "Add Item"
         '
         'btn_administrator
         '
         Me.btn_administrator.BackColor = System.Drawing.Color.MistyRose
-        Me.btn_administrator.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddUserToolStripMenuItem, Me.ManageUsersToolStripMenuItem})
+        Me.btn_administrator.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddUserToolStripMenuItem, Me.ManageUsersToolStripMenuItem, Me.AddQAToolStripMenuItem})
         Me.btn_administrator.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_administrator.ForeColor = System.Drawing.Color.DimGray
         Me.btn_administrator.Image = CType(resources.GetObject("btn_administrator.Image"), System.Drawing.Image)
         Me.btn_administrator.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.btn_administrator.Name = "btn_administrator"
-        Me.btn_administrator.Size = New System.Drawing.Size(181, 30)
+        Me.btn_administrator.Size = New System.Drawing.Size(188, 30)
         Me.btn_administrator.Text = "Administrator"
         Me.btn_administrator.Visible = False
         '
         'AddUserToolStripMenuItem
         '
         Me.AddUserToolStripMenuItem.Name = "AddUserToolStripMenuItem"
-        Me.AddUserToolStripMenuItem.Size = New System.Drawing.Size(179, 26)
+        Me.AddUserToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.AddUserToolStripMenuItem.Text = "Add User"
         '
         'ManageUsersToolStripMenuItem
         '
         Me.ManageUsersToolStripMenuItem.Name = "ManageUsersToolStripMenuItem"
-        Me.ManageUsersToolStripMenuItem.Size = New System.Drawing.Size(179, 26)
+        Me.ManageUsersToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.ManageUsersToolStripMenuItem.Text = "Manage Users"
         '
         'LogoutToolStripMenuItem
@@ -150,7 +163,7 @@ Partial Class subframe
         Me.LogoutToolStripMenuItem.Image = CType(resources.GetObject("LogoutToolStripMenuItem.Image"), System.Drawing.Image)
         Me.LogoutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(181, 30)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(188, 30)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'lbl_FormName
@@ -265,17 +278,11 @@ Partial Class subframe
         Me.Guna2Panel1.Size = New System.Drawing.Size(1151, 10)
         Me.Guna2Panel1.TabIndex = 13
         '
-        'SCANNERToolStripMenuItem
+        'AddQAToolStripMenuItem
         '
-        Me.SCANNERToolStripMenuItem.Name = "SCANNERToolStripMenuItem"
-        Me.SCANNERToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.SCANNERToolStripMenuItem.Text = "SCANNER"
-        '
-        'ADFToolStripMenuItem
-        '
-        Me.ADFToolStripMenuItem.Name = "ADFToolStripMenuItem"
-        Me.ADFToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.ADFToolStripMenuItem.Text = "ADF"
+        Me.AddQAToolStripMenuItem.Name = "AddQAToolStripMenuItem"
+        Me.AddQAToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.AddQAToolStripMenuItem.Text = "Add QA"
         '
         'subframe
         '
@@ -324,4 +331,5 @@ Partial Class subframe
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents SCANNERToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ADFToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddQAToolStripMenuItem As ToolStripMenuItem
 End Class

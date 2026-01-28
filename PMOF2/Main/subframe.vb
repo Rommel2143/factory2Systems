@@ -66,4 +66,9 @@
     Private Sub SCANNERToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SCANNERToolStripMenuItem.Click
         display_inSub(viewplan_scanner)
     End Sub
+
+    Private Sub AddQAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddQAToolStripMenuItem.Click
+        addQC.Show()
+        addQC.BringToFront()
+    End Sub
 End Class

@@ -11,7 +11,7 @@ Module userModules
 
 
     Public userTable As String = "trc_users.pmo"
-    'SELECT `id`(primary), `IDno`(vachar,unique), `Firstname`(varchar), `Lastname`(varchar), `password`(varchar), `admin`(boolean) FROM `app_user`
+    'SELECT `id`(primary), `IDno`(vachar,unique), `Firstname`(varchar), `Lastname`(varchar), `password`(varchar), `admin`(boolean) FROM `trc_user`
 
     Public Function isLogin(IDno As String, pass As String) As Boolean
 
