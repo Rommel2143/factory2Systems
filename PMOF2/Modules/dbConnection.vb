@@ -1,7 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
 Module dbConnection
 
-    Public con As New MySqlConnection("server=PTI-002;user id=Assy;password=assy123@;database=trcsystem")
+
+    Public ConnectionString As String = "server=PTI-002;user id=Assy;password=assy123@;database=trcsystem"
+
+
+
+    Public con As New MySqlConnection(ConnectionString)
     Dim da As New MySqlDataAdapter
     Public dr As MySqlDataReader
 

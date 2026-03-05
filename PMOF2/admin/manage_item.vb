@@ -5,7 +5,16 @@ Public Class manage_item
         loaddata()
     End Sub
     Sub loaddata()
-        reload("SELECT id, `partcode` , `partname`, `model`,modelcode,qty AS 'SPQ' FROM `assy_masterlist`", datagrid1)
+        reload("SELECT id, `partcode` , `partname`, `model`,modelcode,qty AS 'SPQ' FROM `assy_masterlist` ORDER BY id DESC", datagrid1)
+        datagrid1.Columns("id").Visible = False
+        'Add delete column
+        If Not datagrid1.Columns.Contains("Delete") Then
+            Dim deleteButton As New DataGridViewImageColumn()
+            deleteButton.Name = "Delete"
+            deleteButton.HeaderText = ""
+            deleteButton.Image = My.Resources.trash
+            datagrid1.Columns.Add(deleteButton)
+        End If
     End Sub
     Private Sub Guna2TextBox4_TextChanged(sender As Object, e As EventArgs) Handles txt_plan.TextChanged
 
@@ -98,13 +107,58 @@ Public Class manage_item
     End Sub
 
     Private Sub datagrid1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid1.CellClick
-        Dim query As String = "SELECT * FROM assy_masterlist WHERE partcode ='" & datagrid1.Rows(e.RowIndex).Cells("partcode").Value.ToString() & "'"
+
+        'Prevent error when clicking header
+        If e.RowIndex < 0 Then Exit Sub
+
+        'IF DELETE BUTTON CLICKED
+        If datagrid1.Columns(e.ColumnIndex).Name = "Delete" Then
+
+            Dim partcode As String = datagrid1.Rows(e.RowIndex).Cells("partcode").Value.ToString()
+
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this record?",
+                                                      "Confirm Delete",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Warning)
+
+            If result = DialogResult.Yes Then
+
+                Dim deleteQuery As String = "DELETE FROM assy_masterlist WHERE partcode=@partcode"
+
+                con.Close()
+                con.Open()
+
+                Dim cmd As New MySqlCommand(deleteQuery, con)
+                cmd.Parameters.AddWithValue("@partcode", partcode)
+                cmd.ExecuteNonQuery()
+
+                con.Close()
+
+                MessageBox.Show("Record deleted successfully!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                'Reload your datagrid
+                loaddata() ' <-- your reload method here
+
+            End If
+
+            Exit Sub
+        End If
+
+
+        'NORMAL ROW CLICK (FOR EDIT / VIEW)
+        Dim query As String = "SELECT * FROM assy_masterlist WHERE partcode = @partcode"
+
         con.Close()
         con.Open()
+
         Dim selectpart As New MySqlCommand(query, con)
+        selectpart.Parameters.AddWithValue("@partcode",
+        datagrid1.Rows(e.RowIndex).Cells("partcode").Value.ToString())
+
         dr = selectpart.ExecuteReader
+
         If dr.Read = True Then
-            selectedpart = datagrid1.Rows(e.RowIndex).Cells("partcode").Value.ToString()
+            selectedpart = dr.GetString("partcode")
             txt_partcode.Text = dr.GetString("partcode")
             txt_partname.Text = dr.GetString("partname")
             txt_model.Text = dr.GetString("model")
@@ -113,6 +167,9 @@ Public Class manage_item
             txt_boxitem.Text = dr.GetInt32("qty")
             btn_update.Enabled = True
         End If
+
+        dr.Close()
+        con.Close()
 
     End Sub
 End Class

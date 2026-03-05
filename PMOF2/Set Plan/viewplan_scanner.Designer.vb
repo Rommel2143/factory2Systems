@@ -228,7 +228,7 @@ Partial Class viewplan_scanner
         Me.Controls.Add(Me.datagrid1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "viewplan_scanner"
-        Me.Text = "SCANNER"
+        Me.Text = "SCANNER ASSY"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)

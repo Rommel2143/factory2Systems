@@ -39,36 +39,98 @@
         End If
     End Sub
 
-    Private Sub Guna2ImageButton1_Click(sender As Object, e As EventArgs) Handles btn_menu.Click
-        If btn_menu.ContextMenuStrip IsNot Nothing Then
-            btn_menu.ContextMenuStrip.Show(btn_menu, 0, btn_menu.Height)
 
+    Public Sub display_inSub(newForm As Form)
+        With newForm
+            .TopLevel = False
+            .AutoScroll = True
+            .AutoScrollMargin = New Size(50, 50)
+            .FormBorderStyle = FormBorderStyle.None
+            '' Optional: clear previous content
+            'subframe.Panel1.Controls.Clear()
+
+            ' Add if not already present
+            If Not Panel1.Controls.Contains(newForm) Then
+                Panel1.Controls.Add(newForm)
+            End If
+            lbl_FormName.Text = .Text
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
+    Public Sub display_inSub(newForm As Form, column As String)
+        If isAccess(column) Then
+        Else
+            Show_Error("Access Denied.")
+            Exit Sub
         End If
+
+        With newForm
+            .TopLevel = False
+            .AutoScroll = True
+            .AutoScrollMargin = New Size(50, 50)
+
+            .FormBorderStyle = FormBorderStyle.None
+            Panel1.Controls.Clear()
+
+            If Not Panel1.Controls.Contains(newForm) Then
+                Panel1.Controls.Add(newForm)
+            End If
+            lbl_FormName.Text = .Text
+            .BringToFront()
+            .Show()
+        End With
     End Sub
 
 
-    Private Sub SetPlanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetPlanToolStripMenuItem.Click
+
+
+    Private Sub SetPlanToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub OverviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OverviewToolStripMenuItem.Click
-        display_inSub(overview)
+    Private Sub OverviewToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         display_inSub(manage_item)
     End Sub
 
-    Private Sub ADFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ADFToolStripMenuItem.Click
-        display_inSub(viewplan_adf)
+    Private Sub ADFToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub SCANNERToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SCANNERToolStripMenuItem.Click
+    Private Sub SCANNERToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub AddQAToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        addQC.Show()
+        addQC.BringToFront()
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         display_inSub(viewplan_scanner)
     End Sub
 
-    Private Sub AddQAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddQAToolStripMenuItem.Click
-        addQC.Show()
-        addQC.BringToFront()
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        display_inSub(overview)
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        display_inSub(viewplan_adf)
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ManageLeadersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageLeadersToolStripMenuItem.Click
+
+        ManageLeader.Show()
+        ManageLeader.BringToFront()
+
     End Sub
 End Class

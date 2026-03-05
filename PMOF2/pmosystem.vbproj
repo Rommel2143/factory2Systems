@@ -245,6 +245,19 @@
     <Compile Include="overview\overview.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="QC\EditLeader.Designer.vb">
+      <DependentUpon>EditLeader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QC\EditLeader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QC\Leader.vb" />
+    <Compile Include="QC\ManageLeader.Designer.vb">
+      <DependentUpon>ManageLeader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QC\ManageLeader.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Set Plan\edit_plan.Designer.vb">
       <DependentUpon>edit_plan.vb</DependentUpon>
     </Compile>
@@ -268,6 +281,12 @@
     </Compile>
     <Compile Include="Set Plan\setplan.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="usercontrols\LeaderCard.Designer.vb">
+      <DependentUpon>LeaderCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\LeaderCard.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User\change_password.designer.vb">
       <DependentUpon>change_password.vb</DependentUpon>
@@ -337,6 +356,12 @@
     <EmbeddedResource Include="overview\overview.resx">
       <DependentUpon>overview.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QC\EditLeader.resx">
+      <DependentUpon>EditLeader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QC\ManageLeader.resx">
+      <DependentUpon>ManageLeader.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Set Plan\edit_plan.resx">
       <DependentUpon>edit_plan.vb</DependentUpon>
     </EmbeddedResource>
@@ -348,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Set Plan\setplan.resx">
       <DependentUpon>setplan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrols\LeaderCard.resx">
+      <DependentUpon>LeaderCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\change_password.resx">
       <DependentUpon>change_password.vb</DependentUpon>
@@ -387,6 +415,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="model.ico" />
+    <None Include="Resources\trash.png" />
     <None Include="Resources\grid.png" />
     <None Include="Resources\details.png" />
     <None Include="Resources\eye %281%29.png" />

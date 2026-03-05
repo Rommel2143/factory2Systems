@@ -117,29 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="details" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\details.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="duplicate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\duplicate.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="editBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit (10).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="errorsound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\errorsound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="forward2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\forward (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Guna2TextBox1.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAHUAAAB1AePCB2UAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAA8klEQVQ4T7XRvyqGYRzG8c/IQPQqrDgDvRaTP7sSM0b1pnAg5AgwyMLGpJyAMiEnwGTBjH66n3r6
+        eZ6B8q17ua7fn+u+b/6BYWziGOfYx0IuamMFL3jFBU5wgw9cYyw31FkthQcYSN40HsoZSt43ETs2R3Mb
+        sf2prSbuHLEHs5Ho4R392TjCZRYbmMAnZrJxhtMsNtApAxazsYfbLDYwWwZMZWOu/MCPaIlD3Gex4gqP
+        GM9GYa0sWc5GxSju8IwtTGKkxI5HjuaIv5sb68Q3xnu8leLqxODYvF0G7eTGTB+6mC9J6kRzDNlI+q9Y
+        x1IW/8QXtXIxeiF4Bu8AAAAASUVORK5CYII=
+</value>
   </data>
 </root>

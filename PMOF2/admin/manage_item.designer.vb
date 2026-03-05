@@ -40,10 +40,10 @@ Partial Class manage_item
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txt_boxitem = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.cmb_located = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.btn_update = New Guna.UI2.WinForms.Guna2Button()
         Me.datagrid1 = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.cmb_located = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -289,6 +289,34 @@ Partial Class manage_item
         Me.Guna2Panel1.Size = New System.Drawing.Size(510, 573)
         Me.Guna2Panel1.TabIndex = 24
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(67, 22)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(96, 17)
+        Me.Label6.TabIndex = 28
+        Me.Label6.Text = "Model Located"
+        '
+        'cmb_located
+        '
+        Me.cmb_located.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_located.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_located.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_located.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_located.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_located.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_located.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_located.ItemHeight = 30
+        Me.cmb_located.Items.AddRange(New Object() {"SCANNER", "ADF"})
+        Me.cmb_located.Location = New System.Drawing.Point(172, 22)
+        Me.cmb_located.Name = "cmb_located"
+        Me.cmb_located.Size = New System.Drawing.Size(263, 36)
+        Me.cmb_located.TabIndex = 27
+        '
         'btn_update
         '
         Me.btn_update.BackColor = System.Drawing.Color.Transparent
@@ -312,6 +340,8 @@ Partial Class manage_item
         '
         'datagrid1
         '
+        Me.datagrid1.AllowUserToAddRows = False
+        Me.datagrid1.AllowUserToDeleteRows = False
         Me.datagrid1.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -375,34 +405,6 @@ Partial Class manage_item
         Me.datagrid1.ThemeStyle.RowsStyle.Height = 32
         Me.datagrid1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.datagrid1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'cmb_located
-        '
-        Me.cmb_located.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_located.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_located.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_located.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_located.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_located.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmb_located.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_located.ItemHeight = 30
-        Me.cmb_located.Items.AddRange(New Object() {"SCANNER", "ADF"})
-        Me.cmb_located.Location = New System.Drawing.Point(172, 22)
-        Me.cmb_located.Name = "cmb_located"
-        Me.cmb_located.Size = New System.Drawing.Size(263, 36)
-        Me.cmb_located.TabIndex = 27
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(67, 22)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(96, 17)
-        Me.Label6.TabIndex = 28
-        Me.Label6.Text = "Model Located"
         '
         'manage_item
         '

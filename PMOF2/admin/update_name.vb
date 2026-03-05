@@ -22,7 +22,7 @@ Public Class update_name
             Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
             If rowsAffected > 0 Then
                 MessageBox.Show("User information updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                display_inSub(New manage_users)
+                subframe.display_inSub(New manage_users)
                 Me.Close()
 
             Else
@@ -97,7 +97,7 @@ Public Class update_name
 
                 Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
                 If rowsAffected > 0 Then
-                    display_inSub(New manage_users)
+                    subframe.display_inSub(New manage_users)
                     Me.Close()
                 Else
                     MessageBox.Show("No matching record found.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

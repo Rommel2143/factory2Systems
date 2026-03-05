@@ -25,11 +25,6 @@ Partial Class subframe
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(subframe))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnmenu_strip = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.SetPlanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SCANNERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ADFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OverviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.profile_menu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.btn_user = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,15 +37,18 @@ Partial Class subframe
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.lbl_FormName = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.btn_profile = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.btn_menu = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.AddQAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btnmenu_strip.SuspendLayout()
+        Me.ManageLeadersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.profile_menu.SuspendLayout()
+        Me.Guna2Panel2.SuspendLayout()
         Me.Guna2GradientPanel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,42 +57,10 @@ Partial Class subframe
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(17, 63)
+        Me.Panel1.Location = New System.Drawing.Point(221, 63)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1151, 592)
+        Me.Panel1.Size = New System.Drawing.Size(947, 592)
         Me.Panel1.TabIndex = 7
-        '
-        'btnmenu_strip
-        '
-        Me.btnmenu_strip.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmenu_strip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SetPlanToolStripMenuItem, Me.OverviewToolStripMenuItem})
-        Me.btnmenu_strip.Name = "ContextMenuStrip1"
-        Me.btnmenu_strip.Size = New System.Drawing.Size(191, 56)
-        '
-        'SetPlanToolStripMenuItem
-        '
-        Me.SetPlanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SCANNERToolStripMenuItem, Me.ADFToolStripMenuItem})
-        Me.SetPlanToolStripMenuItem.Name = "SetPlanToolStripMenuItem"
-        Me.SetPlanToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
-        Me.SetPlanToolStripMenuItem.Text = "Production Plan"
-        '
-        'SCANNERToolStripMenuItem
-        '
-        Me.SCANNERToolStripMenuItem.Name = "SCANNERToolStripMenuItem"
-        Me.SCANNERToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
-        Me.SCANNERToolStripMenuItem.Text = "SCANNER"
-        '
-        'ADFToolStripMenuItem
-        '
-        Me.ADFToolStripMenuItem.Name = "ADFToolStripMenuItem"
-        Me.ADFToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
-        Me.ADFToolStripMenuItem.Text = "ADF"
-        '
-        'OverviewToolStripMenuItem
-        '
-        Me.OverviewToolStripMenuItem.Name = "OverviewToolStripMenuItem"
-        Me.OverviewToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
-        Me.OverviewToolStripMenuItem.Text = "Overview"
         '
         'profile_menu
         '
@@ -134,7 +100,7 @@ Partial Class subframe
         'btn_administrator
         '
         Me.btn_administrator.BackColor = System.Drawing.Color.MistyRose
-        Me.btn_administrator.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddUserToolStripMenuItem, Me.ManageUsersToolStripMenuItem, Me.AddQAToolStripMenuItem})
+        Me.btn_administrator.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddUserToolStripMenuItem, Me.ManageUsersToolStripMenuItem, Me.ManageLeadersToolStripMenuItem})
         Me.btn_administrator.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_administrator.ForeColor = System.Drawing.Color.DimGray
         Me.btn_administrator.Image = CType(resources.GetObject("btn_administrator.Image"), System.Drawing.Image)
@@ -147,13 +113,13 @@ Partial Class subframe
         'AddUserToolStripMenuItem
         '
         Me.AddUserToolStripMenuItem.Name = "AddUserToolStripMenuItem"
-        Me.AddUserToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.AddUserToolStripMenuItem.Size = New System.Drawing.Size(194, 26)
         Me.AddUserToolStripMenuItem.Text = "Add User"
         '
         'ManageUsersToolStripMenuItem
         '
         Me.ManageUsersToolStripMenuItem.Name = "ManageUsersToolStripMenuItem"
-        Me.ManageUsersToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.ManageUsersToolStripMenuItem.Size = New System.Drawing.Size(194, 26)
         Me.ManageUsersToolStripMenuItem.Text = "Manage Users"
         '
         'LogoutToolStripMenuItem
@@ -172,7 +138,7 @@ Partial Class subframe
         Me.lbl_FormName.BackColor = System.Drawing.Color.Transparent
         Me.lbl_FormName.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_FormName.ForeColor = System.Drawing.Color.DimGray
-        Me.lbl_FormName.Location = New System.Drawing.Point(116, 12)
+        Me.lbl_FormName.Location = New System.Drawing.Point(73, 12)
         Me.lbl_FormName.Name = "lbl_FormName"
         Me.lbl_FormName.Size = New System.Drawing.Size(118, 30)
         Me.lbl_FormName.TabIndex = 9
@@ -181,11 +147,74 @@ Partial Class subframe
         'Guna2Panel2
         '
         Me.Guna2Panel2.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel2.Controls.Add(Me.Guna2Button3)
+        Me.Guna2Panel2.Controls.Add(Me.Guna2Button2)
+        Me.Guna2Panel2.Controls.Add(Me.Guna2Button1)
+        Me.Guna2Panel2.Controls.Add(Me.Label1)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel2.Location = New System.Drawing.Point(0, 53)
         Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(17, 602)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(221, 602)
         Me.Guna2Panel2.TabIndex = 9
+        '
+        'Guna2Button3
+        '
+        Me.Guna2Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button3.BorderColor = System.Drawing.Color.RoyalBlue
+        Me.Guna2Button3.BorderRadius = 5
+        Me.Guna2Button3.BorderThickness = 2
+        Me.Guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button3.FillColor = System.Drawing.Color.White
+        Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button3.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.Guna2Button3.Location = New System.Drawing.Point(16, 157)
+        Me.Guna2Button3.Name = "Guna2Button3"
+        Me.Guna2Button3.Size = New System.Drawing.Size(190, 40)
+        Me.Guna2Button3.TabIndex = 4
+        Me.Guna2Button3.Text = "Overview"
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.BorderRadius = 5
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Location = New System.Drawing.Point(15, 111)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(190, 40)
+        Me.Guna2Button2.TabIndex = 2
+        Me.Guna2Button2.Text = "ADF"
+        '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.BorderRadius = 5
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.Location = New System.Drawing.Point(15, 65)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(190, 40)
+        Me.Guna2Button1.TabIndex = 1
+        Me.Guna2Button1.Text = "Scanner"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(21, 28)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(185, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Production Planning"
         '
         'Guna2Panel3
         '
@@ -203,7 +232,6 @@ Partial Class subframe
         Me.Guna2GradientPanel1.Controls.Add(Me.lbl_FormName)
         Me.Guna2GradientPanel1.Controls.Add(Me.btn_profile)
         Me.Guna2GradientPanel1.Controls.Add(Me.Guna2PictureBox1)
-        Me.Guna2GradientPanel1.Controls.Add(Me.btn_menu)
         Me.Guna2GradientPanel1.CustomBorderColor = System.Drawing.Color.Gainsboro
         Me.Guna2GradientPanel1.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 1)
         Me.Guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -249,40 +277,20 @@ Partial Class subframe
         Me.Guna2PictureBox1.TabStop = False
         Me.Guna2PictureBox1.UseTransparentBackground = True
         '
-        'btn_menu
-        '
-        Me.btn_menu.BackColor = System.Drawing.Color.Transparent
-        Me.btn_menu.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.btn_menu.ContextMenuStrip = Me.btnmenu_strip
-        Me.btn_menu.HoverState.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
-        Me.btn_menu.HoverState.ImageSize = New System.Drawing.Size(33, 33)
-        Me.btn_menu.Image = CType(resources.GetObject("btn_menu.Image"), System.Drawing.Image)
-        Me.btn_menu.ImageOffset = New System.Drawing.Point(0, 0)
-        Me.btn_menu.ImageRotate = 0!
-        Me.btn_menu.ImageSize = New System.Drawing.Size(32, 32)
-        Me.btn_menu.Location = New System.Drawing.Point(75, 10)
-        Me.btn_menu.Name = "btn_menu"
-        Me.btn_menu.PressedState.Image = CType(resources.GetObject("resource.Image3"), System.Drawing.Image)
-        Me.btn_menu.PressedState.ImageSize = New System.Drawing.Size(31, 31)
-        Me.btn_menu.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btn_menu.Size = New System.Drawing.Size(35, 32)
-        Me.btn_menu.TabIndex = 5
-        Me.btn_menu.UseTransparentBackground = True
-        '
         'Guna2Panel1
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.White
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel1.Location = New System.Drawing.Point(17, 53)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(221, 53)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1151, 10)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(947, 10)
         Me.Guna2Panel1.TabIndex = 13
         '
-        'AddQAToolStripMenuItem
+        'ManageLeadersToolStripMenuItem
         '
-        Me.AddQAToolStripMenuItem.Name = "AddQAToolStripMenuItem"
-        Me.AddQAToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.AddQAToolStripMenuItem.Text = "Add QA"
+        Me.ManageLeadersToolStripMenuItem.Name = "ManageLeadersToolStripMenuItem"
+        Me.ManageLeadersToolStripMenuItem.Size = New System.Drawing.Size(194, 26)
+        Me.ManageLeadersToolStripMenuItem.Text = "Manage Leaders"
         '
         'subframe
         '
@@ -298,8 +306,9 @@ Partial Class subframe
         Me.Name = "subframe"
         Me.Text = "subframe"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.btnmenu_strip.ResumeLayout(False)
         Me.profile_menu.ResumeLayout(False)
+        Me.Guna2Panel2.ResumeLayout(False)
+        Me.Guna2Panel2.PerformLayout()
         Me.Guna2GradientPanel1.ResumeLayout(False)
         Me.Guna2GradientPanel1.PerformLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -312,7 +321,6 @@ Partial Class subframe
     Friend WithEvents profile_menu As ContextMenuStrip
     Friend WithEvents btn_administrator As ToolStripMenuItem
     Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents btnmenu_strip As ContextMenuStrip
     Friend WithEvents btn_user As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents AddUserToolStripMenuItem As ToolStripMenuItem
@@ -321,15 +329,14 @@ Partial Class subframe
     Friend WithEvents lbl_FormName As Label
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
-    Private WithEvents btn_menu As Guna.UI2.WinForms.Guna2ImageButton
     Private WithEvents btn_profile As Guna.UI2.WinForms.Guna2ImageButton
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2GradientPanel1 As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents SetPlanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OverviewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents SCANNERToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ADFToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddQAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ManageLeadersToolStripMenuItem As ToolStripMenuItem
 End Class
