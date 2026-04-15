@@ -2,7 +2,7 @@
 Module dbConnection
 
 
-    Public ConnectionString As String = "server=PTI-002;user id=Assy;password=assy123@;database=trcsystem"
+    Public ReadOnly ConnectionString As String = "server=PTI-002;user id=Assy;password=assy123@;database=trcsystem"
 
 
 

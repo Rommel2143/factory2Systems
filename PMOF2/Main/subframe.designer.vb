@@ -33,6 +33,7 @@ Partial Class subframe
         Me.btn_administrator = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageUsersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManageLeadersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.lbl_FormName = New System.Windows.Forms.Label()
@@ -46,7 +47,6 @@ Partial Class subframe
         Me.btn_profile = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.ManageLeadersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.profile_menu.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2GradientPanel1.SuspendLayout()
@@ -95,7 +95,7 @@ Partial Class subframe
         Me.ToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(188, 30)
-        Me.ToolStripMenuItem1.Text = "Add Item"
+        Me.ToolStripMenuItem1.Text = "Manage Item"
         '
         'btn_administrator
         '
@@ -121,6 +121,12 @@ Partial Class subframe
         Me.ManageUsersToolStripMenuItem.Name = "ManageUsersToolStripMenuItem"
         Me.ManageUsersToolStripMenuItem.Size = New System.Drawing.Size(194, 26)
         Me.ManageUsersToolStripMenuItem.Text = "Manage Users"
+        '
+        'ManageLeadersToolStripMenuItem
+        '
+        Me.ManageLeadersToolStripMenuItem.Name = "ManageLeadersToolStripMenuItem"
+        Me.ManageLeadersToolStripMenuItem.Size = New System.Drawing.Size(194, 26)
+        Me.ManageLeadersToolStripMenuItem.Text = "Manage Leaders"
         '
         'LogoutToolStripMenuItem
         '
@@ -285,12 +291,6 @@ Partial Class subframe
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(947, 10)
         Me.Guna2Panel1.TabIndex = 13
-        '
-        'ManageLeadersToolStripMenuItem
-        '
-        Me.ManageLeadersToolStripMenuItem.Name = "ManageLeadersToolStripMenuItem"
-        Me.ManageLeadersToolStripMenuItem.Size = New System.Drawing.Size(194, 26)
-        Me.ManageLeadersToolStripMenuItem.Text = "Manage Leaders"
         '
         'subframe
         '

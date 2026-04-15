@@ -69,10 +69,10 @@
     <ApplicationIcon>model.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D40EC7BDF8088E6370459B272C8031A0D61D2000</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>256B406F3DE8D8EA6D6CB44004CCDB5E515B930C</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>pmosystem_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>pmosystem_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -206,10 +206,22 @@
     <Compile Include="admin\add_user.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin\manage_item.designer.vb">
+    <Compile Include="admin\Manage Items\AddItem.Designer.vb">
+      <DependentUpon>AddItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Manage Items\AddItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\Manage Items\ManageItem.Designer.vb">
+      <DependentUpon>ManageItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Manage Items\ManageItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\Manage Items\manage_item.designer.vb">
       <DependentUpon>manage_item.vb</DependentUpon>
     </Compile>
-    <Compile Include="admin\manage_item.vb">
+    <Compile Include="admin\Manage Items\manage_item.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="admin\update_name.designer.vb">
@@ -230,6 +242,7 @@
     <Compile Include="Main\subframe.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Model\Item.vb" />
     <Compile Include="Modules\CryptoModule.vb" />
     <Compile Include="Modules\excelModule.vb" />
     <Compile Include="Modules\HandleInputs.vb" />
@@ -338,7 +351,13 @@
     <EmbeddedResource Include="admin\add_user.resx">
       <DependentUpon>add_user.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin\manage_item.resx">
+    <EmbeddedResource Include="admin\Manage Items\AddItem.resx">
+      <DependentUpon>AddItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\Manage Items\ManageItem.resx">
+      <DependentUpon>ManageItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\Manage Items\manage_item.resx">
       <DependentUpon>manage_item.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admin\update_name.resx">
@@ -407,6 +426,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="pmosystem_1_TemporaryKey.pfx" />
     <None Include="pmosystem_TemporaryKey.pfx" />
     <None Include="Resources\duplicate.wav" />
   </ItemGroup>
